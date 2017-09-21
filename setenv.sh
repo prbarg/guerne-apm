@@ -3,7 +3,7 @@
 # set EM host and port
 sed -Ei "s/agentManager.url.1=localhost:5001/agentManager.url.1=$EM_HOST:$EM_PORT/" $WILY_HOME/core/config/IntroscopeAgent.profile
 
-# enable Browser Agent
+# enable Browser Agent:
 if [ "${ENABLE_BROWSER_AGENT}" = "true" ] ; then
     # copy Browser Agent jar
     cp $WILY_HOME/examples/APM/BrowserAgent/ext/*.jar $WILY_HOME/core/ext

@@ -1,14 +1,14 @@
 #FROM tomcat:8-jre7
-FROM mytomcatapplication:latest
+FROM openshift/webserver30-tomcat8-openshift
 
 MAINTAINER guenter.grossberger@ca.com
 
 ENV WILY_HOME=$CATALINA_HOME/wily \
-    INTROSCOPE_VERSION=10.3.0.15 \
-    EM_HOST=manager \
+    INTROSCOPE_VERSION=10.5.1.8 \
+    EM_HOST=lxapmdesa01 \
     EM_PORT=5001 \
     AGENT_NAME="Docker Tomcat Agent" \
-    AGENT_HOSTNAME="docker_tomcat_01" \
+    AGENT_HOSTNAME="testapm" \
     HEAP=2048m \
     ENABLE_BROWSER_AGENT=true
 

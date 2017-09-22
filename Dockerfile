@@ -3,7 +3,9 @@ FROM openshift/webserver30-tomcat8-openshift
 
 MAINTAINER guenter.grossberger@ca.com
 
-ENV WILY_HOME=$CATALINA_HOME/wily \
+#ENV WILY_HOME=$CATALINA_HOME/wily \
+ENV CATALINA_HOME=/home/jboos \
+    WILY_HOME=$CATALINA_HOME/wily \
     INTROSCOPE_VERSION=10.5.1.8 \
     EM_HOST=lxapmdesa01 \
     EM_PORT=5001 \

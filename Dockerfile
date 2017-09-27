@@ -3,9 +3,10 @@ FROM openshift/webserver30-tomcat8-openshift
 
 MAINTAINER guenter.grossberger@ca.com
 
+#ENV CATALINA_HOME=/home/jboos \
 #ENV WILY_HOME=$CATALINA_HOME/wily \
-ENV CATALINA_HOME=/home/jboos \
-    WILY_HOME=$CATALINA_HOME/wily \
+ENV WILY_HOME=$HOME/wily \
+    CATALINA_HOME=/opt/webserver \
     INTROSCOPE_VERSION=10.5.1.8 \
     EM_HOST=lxapmdesa01 \
     EM_PORT=5001 \
@@ -15,7 +16,8 @@ ENV CATALINA_HOME=/home/jboos \
     ENABLE_BROWSER_AGENT=true
 
 # install agent
-ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
+#ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
+ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
 
 # configure CA APM java agent
 COPY setenv.sh $WILY_HOME/setenv.sh

@@ -5,7 +5,7 @@ MAINTAINER guenter.grossberger@ca.com
 
 #ENV CATALINA_HOME=/home/jboos \
 #ENV WILY_HOME=$CATALINA_HOME/wily \
-ENV WILY_HOME=$HOME/wily \
+ENV WILY_HOME=/home/jboss \
     CATALINA_HOME=/opt/webserver \
     INTROSCOPE_VERSION=10.5.1.8 \
     EM_HOST=lxapmdesa01 \
@@ -17,7 +17,8 @@ ENV WILY_HOME=$HOME/wily \
 
 # install agent
 #ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
-ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
+COPY IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
+RUN cd $WILY_HOME && tar -xf IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar
 
 # configure CA APM java agent
 COPY setenv.sh $WILY_HOME/setenv.sh

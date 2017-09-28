@@ -18,7 +18,7 @@ ENV WILY_HOME=/home/jboss \
 # install agent
 ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
 #COPY IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
-RUN cd $WILY_HOME && tar -xf IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar
+#RUN cd $WILY_HOME && tar -xf IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar
 
 # configure CA APM java agent
 COPY setenv.sh $WILY_HOME/setenv.sh

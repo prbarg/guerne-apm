@@ -5,7 +5,7 @@ MAINTAINER guenter.grossberger@ca.com
 
 #ENV CATALINA_HOME=/home/jboos \
 #ENV WILY_HOME=$CATALINA_HOME/wily \
-ENV WILY_HOME=/opt/produban \
+ENV WILY_HOME=/home/jboss \
     CATALINA_HOME=/opt/webserver \
     INTROSCOPE_VERSION=10.5.1.8 \
     EM_HOST=lxapmdesa01 \
@@ -16,7 +16,7 @@ ENV WILY_HOME=/opt/produban \
     ENABLE_BROWSER_AGENT=true
 
 #Create PRB structure
-RUN mkdir -p /opt/produban 
+#RUN mkdir -p /opt/produban 
 
 
 # install agent

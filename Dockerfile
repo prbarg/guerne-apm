@@ -16,7 +16,7 @@ ENV WILY_HOME=/opt/produban \
     ENABLE_BROWSER_AGENT=true
 
 #Create PRB structure
-RUN mkdir -p /opt/produban && chmod -R 777 /opt/produban
+RUN mkdir -p /opt/produban 
 
 
 # install agent

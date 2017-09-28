@@ -16,8 +16,8 @@ ENV WILY_HOME=/home/jboss \
     ENABLE_BROWSER_AGENT=true
 
 # install agent
-#ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
-COPY IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
+ADD IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $CATALINA_HOME
+#COPY IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar $WILY_HOME
 RUN cd $WILY_HOME && tar -xf IntroscopeAgentFiles-NoInstaller${INTROSCOPE_VERSION}tomcat.unix.tar
 
 # configure CA APM java agent
